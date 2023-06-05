@@ -1,3 +1,122 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+:root {
+  /* Colors */
+  --clr-dark-cyan: hsl(185, 75%, 39%);
+  --clr-very-dark-desaturated-blue: hsl(229, 23%, 23%);
+  --clr-dark-grayish-blue: hsl(227, 10%, 46%);
+  --clr-dark-gray: hsl(0, 0%, 59%);
+  --clr-white: hsl(0, 0%, 100%);
+}
+
+body {
+  background-color: var(--clr-dark-cyan);
+  /* background: url(../design/desktop-design.jpg) no-repeat center center; */
+  min-height: 100vh;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main::after,
+main::before {
+  content: "";
+  width: 978px;
+  height: 978px;
+  position: absolute;
+  background: url(../images/bg-pattern-bottom.svg) no-repeat;
+}
+
+main::after {
+  transform: rotate(90deg) translate(-50%, 50%);
+  z-index: -1;
+}
+
+main::before {
+  transform: translate(50%, 50%);
+  z-index: -1;
+}
+
+.card {
+  width: 350px;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: var(--clr-white);
+}
+
+.card header {
+  height: 190px;
+  background: url(../images/bg-pattern-card.svg) top center no-repeat;
+  position: relative;
+}
+
+.card img {
+  border-radius: 50%;
+  border: 5px solid var(--clr-white);
+  position: absolute;
+  inset: 0;
+  margin: auto auto 0;
+}
+
+hgroup {
+  text-align: center;
+  padding: 0.875rem 0 1.375rem;
+  line-height: 1.8;
+  border-bottom: 1px solid var(--clr-dark-gray);
+}
+hgroup p {
+  font-size: 0.875rem;
+  color: var(--clr-dark-gray);
+}
+
+h1,
+h2 {
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+h1 > span {
+  font-weight: 400;
+  padding-left: 0.25rem;
+  color: var(--clr-dark-gray);
+}
+.card-stats {
+  padding: 20px 26px 24px;
+}
+.card-stats ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  list-style: none;
+}
+.card-stats li {
+  text-align: center;
+  line-height: 1.56;
+}
+.card-stats p {
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
 .attribution {
   position: absolute;
   bottom: 0;
